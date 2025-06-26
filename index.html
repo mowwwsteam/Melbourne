@@ -118,10 +118,21 @@
       background: var(--primary);
       padding: 6rem 2rem;
     }
-    .detail-section img {
-      width: 100%;
+    .detail-section .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .detail-section .image-row img {
+      width: 48%;
       border-radius: 12px;
-      margin: 1rem 0;
+    }
+    @media (max-width: 768px) {
+      .detail-section .image-row img {
+        width: 100%;
+      }
     }
     .back-link {
       color: var(--accent);
@@ -187,30 +198,37 @@
   <a href="#home" class="back-link" onclick="returnToMain()">&larr; Back to Main Page</a>
   <h2>Melbourne's Trams</h2>
   <p>The trams of Melbourne are not just transportation but a symbol of the city. The network includes heritage routes and modern light rail trams. Melbourne has the oldest surviving tram system, consisting of 160km worth of tram tracks, amazing heritage routes and also a huge variety of trams such as the D-Class tram shown below, A-Class tram shown below and many others you can search up such as C1 class, C2 class, E Class, G Class, B-Class and the oldest W-Class</p>
-  <img src="https://live.staticflickr.com/631/21696712836_f07c4ff926_h.jpg" alt="D-Class Tram" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/A2273_YarraTrams_New_Livery.JPG/1200px-A2273_YarraTrams_New_Livery.JPG" alt="A-Class Tram" />
+  <div class="image-row">
+    <img src="https://live.staticflickr.com/631/21696712836_f07c4ff926_h.jpg" alt="D-Class Tram" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/A2273_YarraTrams_New_Livery.JPG/1200px-A2273_YarraTrams_New_Livery.JPG" alt="A-Class Tram" />
+  </div>
 </section>
 
 <!-- Landmarks Detail -->
 <section id="landmarks-detail" class="detail-section">
   <a href="#home" class="back-link" onclick="returnToMain()">&larr; Back to Main Page</a>
   <h2>Landmarks</h2>
-  <p>Federation Square, the Shrine of Remembrance, and the Melbourne Star, National Gallery of Art and Flinders street station. These are just some of the few amazing landmarks avalible in Melbourne.</p>
-  <img src="https://wallpapers.com/images/hd/melbourne-federation-square-event-dusk-7wezf5mggmqib7lt.jpg" alt="Federation Square" />
-  <img src="https://media.gettyimages.com/id/1341872134/video/melbourne-australia-a-general-view-of-police-and-protestors-in-front-of-the-eternal-flame-at.jpg?s=640x640&k=20&c=UZiIfXr5UmmPgkZiWAVlxo_ld_yg-bradGtb26_v9mo=" alt="Shrine of Remembrance" />
+  <p>Federation Square, the Shrine of Remembrance, and the Melbourne Star, National Gallery of Art and Flinders street station. These are just some of the few amazing landmarks in Melbourne, amazing city views and vibrant culture makes Melbourne a Must Visit for tourists.
+</p>
+  <div class="image-row">
+    <img src="https://wallpapers.com/images/hd/melbourne-federation-square-event-dusk-7wezf5mggmqib7lt.jpg" alt="Federation Square" />
+    <img src="https://media.gettyimages.com/id/1341872134/video/melbourne-australia-a-general-view-of-police-and-protestors-in-front-of-the-eternal-flame-at.jpg?s=640x640&k=20&c=UZiIfXr5UmmPgkZiWAVlxo_ld_yg-bradGtb26_v9mo=" alt="Shrine of Remembrance" />
+  </div>
 </section>
 
 <!-- Flinders Detail -->
 <section id="flinders-detail" class="detail-section">
   <a href="#home" class="back-link" onclick="returnToMain()">&larr; Back to Main Page</a>
   <h2>Flinders Street Station</h2>
-  <p>Opened in 1910, this iconic station is a meeting place and symbol of the city, Flinders Street Station has trains, trams and busses. Every minuite atleast 1 type of public transport arrives. Flinders street station is rigt in the CBD making for easy travel and also a packed place perfect for events, selling and more!.</p>
-  <img src="https://images.adsttc.com/media/images/51de/f9f2/e8e4/4e8c/0b00/0003/large_jpg/Flinders-St-071111016.jpg?1373567470" alt="Flinders Station" />
-  <img src="https://www.lovellchen.com.au/wp-content/uploads/2018/11/PROJECT-headline_flindersStreetStation_1000x410.jpg" alt="Another View" />
+  <p>Opened in 1910, this iconic station is a meeting place and symbol of the city, Flinders Street Station has trains, trams and busses. Every minuite atleast 1 type of public transport arrives. Flinders street station is rigt in the CBD making for easy travel and also a packed place perfect for events, selling and more!</p>
+  <div class="image-row">
+    <img src="https://images.adsttc.com/media/images/51de/f9f2/e8e4/4e8c/0b00/0003/large_jpg/Flinders-St-071111016.jpg?1373567470" alt="Flinders Station" />
+    <img src="https://www.lovellchen.com.au/wp-content/uploads/2018/11/PROJECT-headline_flindersStreetStation_1000x410.jpg" alt="Another View" />
+  </div>
 </section>
 
 <footer>
-  &copy; 2025 Made by Harrington Whaley for Mr Chester. All rights reserved.
+  &copy; 2025 Made by Harrington Whaley for Mr Chester. Hand Coded by Harrington with about 40 youtube videos-
 </footer>
 
 <script>
@@ -235,3 +253,4 @@
 
 </body>
 </html>
+
