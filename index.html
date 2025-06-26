@@ -360,13 +360,7 @@ document.querySelectorAll('.dropdown-content a').forEach(link=>{
     const targetId=link.getAttribute('data-target');
     const targetSection=document.getElementById(targetId);
     if(!targetSection) return;
-    window.scrollTo({top: targetSection.offsetTop-60, behavior:'auto'});
-    document.querySelectorAll('.section').forEach(section=>{
-      if(section.id !== targetId) section.style.opacity=0;
-    });
-    targetSection.style.opacity=0;
-    targetSection.style.transition='opacity 1.5s ease';
-    setTimeout(()=>{targetSection.style.opacity=1;},50);
+    window.scrollTo({top: targetSection.offsetTop-60, behavior:'smooth'});
   });
 });
 function toggleDetail(id){
@@ -387,3 +381,4 @@ function returnToMain(){
 </script>
 </body>
 </html>
+
