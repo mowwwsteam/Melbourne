@@ -11,20 +11,14 @@
       --accent: #62b6f0;
       --text: #ffffff;
     }
-
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-
     body {
-      background: var(--primary);
-      color: var(--text);
+      background: var(--primary); color: var(--text);
       scroll-behavior: smooth;
     }
-
     header {
       background: var(--secondary);
       padding: 1rem 2rem;
@@ -35,21 +29,13 @@
       width: 100%;
       z-index: 1000;
     }
-
-    header h1 {
-      color: var(--accent);
-    }
-
+    header h1 { color: var(--accent); }
     nav a {
       margin-left: 1.5rem;
-      color: var(--text);
-      text-decoration: none;
+      color: var(--text); text-decoration: none;
       font-weight: bold;
     }
-
-    nav a:hover {
-      color: var(--accent);
-    }
+    nav a:hover { color: var(--accent); }
 
     .section {
       padding: 6rem 2rem 4rem;
@@ -67,7 +53,6 @@
       background: url('https://images.unsplash.com/photo-1680759578665-36c6e5749ea2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0') no-repeat center center/cover;
       position: relative;
     }
-
     .hero::before,
     #trams::after,
     #landmarks::after,
@@ -79,23 +64,14 @@
       z-index: -1;
     }
 
-    .hero-content,
-    .content {
+    .hero-content, .content {
       position: relative;
       z-index: 1;
       max-width: 900px;
     }
 
-    .hero h2, #trams h2, #landmarks h2, #flinders h2 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: var(--text);
-    }
-
-    .hero p, #trams p, #landmarks p, #flinders p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-    }
+    h2 { font-size: 3rem; margin-bottom: 1rem; color: var(--text); }
+    p  { font-size: 1.2rem; line-height: 1.6; }
 
     .btn {
       display: inline-block;
@@ -108,50 +84,51 @@
       text-decoration: none;
       transition: background 0.3s ease;
     }
+    .btn:hover { background: #4ea7e3; }
 
-    .btn:hover {
-      background: #4ea7e3;
-    }
-
-    /* Sections with background images */
     #trams, #landmarks, #flinders {
-      padding: 0;
-      color: white;
-      position: relative;
+      padding: 0; color: white; position: relative;
     }
-
     #trams::before {
       content: "";
       background: url('https://images.unsplash.com/photo-1721717839294-374c6bd4f312?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0') no-repeat center center/cover;
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      z-index: -2;
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -2;
     }
-
     #landmarks::before {
       content: "";
       background: url('https://images.unsplash.com/photo-1712764032909-dd6a7818b03b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      z-index: -2;
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -2;
     }
-
     #flinders::before {
       content: "";
       background: url('https://images.unsplash.com/photo-1631494262276-eb28affc9704?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      z-index: -2;
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -2;
     }
 
-    #trams .content,
-    #landmarks .content,
-    #flinders .content {
+    #trams .content, #landmarks .content, #flinders .content {
       padding: 6rem 2rem 4rem;
       max-width: 900px;
       margin: 0 auto;
       position: relative;
       z-index: 1;
+    }
+
+    .detail-section {
+      display: none;
+      background: var(--primary);
+      padding: 6rem 2rem;
+    }
+    .detail-section img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 1rem 0;
+    }
+    .back-link {
+      color: var(--accent);
+      font-size: 1.1rem;
+      text-decoration: none;
+      margin-bottom: 2rem;
+      display: inline-block;
     }
 
     footer {
@@ -184,8 +161,8 @@
 <section id="trams" class="section">
   <div class="content">
     <h2>Melbourne's Trams</h2>
-    <p>Melbourne has the largest operating tram network in the world. The iconic green-and-gold W-Class trams still roam the CBD, offering charm and history on wheels.</p>
-    <a href="trams.html" class="btn">Learn More</a>
+    <p>Melbourne has the largest operating tram network in the world. The iconic green-and-gold W-Class trams still roam the CBD.</p>
+    <a href="#trams-detail" class="btn" onclick="toggleDetail('trams-detail')">Learn More</a>
   </div>
 </section>
 
@@ -193,7 +170,7 @@
   <div class="content">
     <h2>Famous Landmarks</h2>
     <p>From Federation Square to the Royal Botanic Gardens, Melbourne is home to many unique and picturesque sites that reflect its artistic and cultural soul.</p>
-    <a href="landmarks.html" class="btn">Learn More</a>
+    <a href="#landmarks-detail" class="btn" onclick="toggleDetail('landmarks-detail')">Learn More</a>
   </div>
 </section>
 
@@ -201,13 +178,60 @@
   <div class="content">
     <h2>Flinders Street Station</h2>
     <p>The beating heart of Melbourne’s transport system. Its clocks, domes, and iconic yellow facade make it one of the most recognized buildings in the city.</p>
-    <a href="flinders.html" class="btn">Learn More</a>
+    <a href="#flinders-detail" class="btn" onclick="toggleDetail('flinders-detail')">Learn More</a>
   </div>
 </section>
 
+<!-- Trams Detail -->
+<section id="trams-detail" class="detail-section">
+  <a href="#home" class="back-link" onclick="returnToMain()">&larr; Back to Main Page</a>
+  <h2>Melbourne's Trams</h2>
+  <p>The trams of Melbourne are not just transportation but a symbol of the city. The network includes heritage routes and modern light rail trams. Melbourne has the oldest surviving tram system, consisting of 160km worth of tram tracks, amazing heritage routes and also a huge variety of trams such as the D-Class tram shown below, A-Class tram shown below and many others you can search up such as C1 class, C2 class, E Class, G Class, B-Class and the oldest W-Class</p>
+  <img src="https://live.staticflickr.com/631/21696712836_f07c4ff926_h.jpg" alt="D-Class Tram" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/A2273_YarraTrams_New_Livery.JPG/1200px-A2273_YarraTrams_New_Livery.JPG" alt="A-Class Tram" />
+</section>
+
+<!-- Landmarks Detail -->
+<section id="landmarks-detail" class="detail-section">
+  <a href="#home" class="back-link" onclick="returnToMain()">&larr; Back to Main Page</a>
+  <h2>Landmarks</h2>
+  <p>Federation Square, the Shrine of Remembrance, and the Melbourne Star, National Gallery of Art and Flinders street station. These are just some of the few amazing landmarks avalible in Melbourne.</p>
+  <img src="https://wallpapers.com/images/hd/melbourne-federation-square-event-dusk-7wezf5mggmqib7lt.jpg" alt="Federation Square" />
+  <img src="https://media.gettyimages.com/id/1341872134/video/melbourne-australia-a-general-view-of-police-and-protestors-in-front-of-the-eternal-flame-at.jpg?s=640x640&k=20&c=UZiIfXr5UmmPgkZiWAVlxo_ld_yg-bradGtb26_v9mo=" alt="Shrine of Remembrance" />
+</section>
+
+<!-- Flinders Detail -->
+<section id="flinders-detail" class="detail-section">
+  <a href="#home" class="back-link" onclick="returnToMain()">&larr; Back to Main Page</a>
+  <h2>Flinders Street Station</h2>
+  <p>Opened in 1910, this iconic station is a meeting place and symbol of the city, Flinders Street Station has trains, trams and busses. Every minuite atleast 1 type of public transport arrives. Flinders street station is rigt in the CBD making for easy travel and also a packed place perfect for events, selling and more!.</p>
+  <img src="https://images.adsttc.com/media/images/51de/f9f2/e8e4/4e8c/0b00/0003/large_jpg/Flinders-St-071111016.jpg?1373567470" alt="Flinders Station" />
+  <img src="https://www.lovellchen.com.au/wp-content/uploads/2018/11/PROJECT-headline_flindersStreetStation_1000x410.jpg" alt="Another View" />
+</section>
+
 <footer>
-  &copy;   2025 Made by Harrington Whaley for Mr Chester. All rights reserved.
+  &copy; 2025 Made by Harrington Whaley for Mr Chester. All rights reserved.
 </footer>
+
+<script>
+  function toggleDetail(id) {
+    const allDetails = document.querySelectorAll('.detail-section');
+    allDetails.forEach(section => section.style.display = 'none');
+    const mainSections = document.querySelectorAll('.section');
+    mainSections.forEach(sec => sec.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+    window.scrollTo(0, 0);
+  }
+
+  function returnToMain() {
+    const allDetails = document.querySelectorAll('.detail-section');
+    allDetails.forEach(section => section.style.display = 'none');
+    const mainSections = document.querySelectorAll('.section');
+    mainSections.forEach(sec => sec.style.display = 'flex');
+    window.scrollTo(0, 0);
+    return false;
+  }
+</script>
 
 </body>
 </html>
