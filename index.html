@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visit Melbourne</title>
+  <style>
+    :root {
+      --primary: #0a192f;
+      --secondary: #1f4068;
+      --accent: #62b6f0;
+      --text: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: var(--primary);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: var(--secondary);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    header h1 {
+      color: var(--accent);
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .section {
+      padding: 6rem 2rem 4rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1680759578665-36c6e5749ea2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0') no-repeat center center/cover;
+      position: relative;
+    }
+
+    .hero::before,
+    #trams::after,
+    #landmarks::after,
+    #flinders::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10, 25, 47, 0.7);
+      z-index: -1;
+    }
+
+    .hero-content,
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+
+    .hero h2, #trams h2, #landmarks h2, #flinders h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .hero p, #trams p, #landmarks p, #flinders p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.75rem 2rem;
+      background: var(--accent);
+      color: var(--primary);
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #4ea7e3;
+    }
+
+    /* Sections with background images */
+    #trams, #landmarks, #flinders {
+      padding: 0;
+      color: white;
+      position: relative;
+    }
+
+    #trams::before {
+      content: "";
+      background: url('https://images.unsplash.com/photo-1721717839294-374c6bd4f312?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0') no-repeat center center/cover;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: -2;
+    }
+
+    #landmarks::before {
+      content: "";
+      background: url('https://images.unsplash.com/photo-1712764032909-dd6a7818b03b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: -2;
+    }
+
+    #flinders::before {
+      content: "";
+      background: url('https://images.unsplash.com/photo-1631494262276-eb28affc9704?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: -2;
+    }
+
+    #trams .content,
+    #landmarks .content,
+    #flinders .content {
+      padding: 6rem 2rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--secondary);
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Visit Melbourne</h1>
+  <nav>
+    <a href="#trams">Trams</a>
+    <a href="#landmarks">Landmarks</a>
+    <a href="#flinders">Flinders Station</a>
+  </nav>
+</header>
+
+<section class="section hero" id="home">
+  <div class="hero-content">
+    <h2>Welcome to Melbourne</h2>
+    <p>Explore the cultural capital of Australia. From historic trams to iconic landmarks and buzzing laneways, Melbourne offers something for everyone.</p>
+    <a href="#trams" class="btn">Explore More</a>
+  </div>
+</section>
+
+<section id="trams" class="section">
+  <div class="content">
+    <h2>Melbourne's Trams</h2>
+    <p>Melbourne has the largest operating tram network in the world. The iconic green-and-gold W-Class trams still roam the CBD, offering charm and history on wheels.</p>
+    <a href="trams.html" class="btn">Learn More</a>
+  </div>
+</section>
+
+<section id="landmarks" class="section">
+  <div class="content">
+    <h2>Famous Landmarks</h2>
+    <p>From Federation Square to the Royal Botanic Gardens, Melbourne is home to many unique and picturesque sites that reflect its artistic and cultural soul.</p>
+    <a href="landmarks.html" class="btn">Learn More</a>
+  </div>
+</section>
+
+<section id="flinders" class="section">
+  <div class="content">
+    <h2>Flinders Street Station</h2>
+    <p>The beating heart of Melbourne’s transport system. Its clocks, domes, and iconic yellow facade make it one of the most recognized buildings in the city.</p>
+    <a href="flinders.html" class="btn">Learn More</a>
+  </div>
+</section>
+
+<footer>
+  &copy;   2025 Made by Harrington Whaley for Mr Chester. All rights reserved.
+</footer>
+
+</body>
+</html>
