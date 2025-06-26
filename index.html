@@ -1,166 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Visit Melbourne</title>
-  <style>
-    :root {
-      --primary: #0a192f;
-      --secondary: #1f4068;
-      --accent: #62b6f0;
-      --text: #ffffff;
-    }
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-      background: var(--primary); color: var(--text);
-      scroll-behavior: smooth;
-    }
-    header {
-      background: var(--secondary);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      width: 100%;
-      z-index: 1000;
-    }
-    header h1 { color: var(--accent); }
-    nav a {
-      margin-left: 1.5rem;
-      color: var(--text); text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover { color: var(--accent); }
-
-    .section {
-      padding: 6rem 2rem 4rem;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero {
-      background: url('https://images.unsplash.com/photo-1680759578665-36c6e5749ea2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0') no-repeat center center/cover;
-      position: relative;
-    }
-    .hero::before,
-    #trams::after,
-    #landmarks::after,
-    #flinders::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(10, 25, 47, 0.7);
-      z-index: -1;
-    }
-
-    .hero-content, .content {
-      position: relative;
-      z-index: 1;
-      max-width: 900px;
-    }
-
-    h2 { font-size: 3rem; margin-bottom: 1rem; color: var(--text); }
-    p  { font-size: 1.2rem; line-height: 1.6; }
-
-    .btn {
-      display: inline-block;
-      margin-top: 2rem;
-      padding: 0.75rem 2rem;
-      background: var(--accent);
-      color: var(--primary);
-      font-weight: bold;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-    .btn:hover { background: #4ea7e3; }
-
-    #trams, #landmarks, #flinders {
-      padding: 0; color: white; position: relative;
-    }
-    #trams::before {
-      content: "";
-      background: url('https://images.unsplash.com/photo-1721717839294-374c6bd4f312?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0') no-repeat center center/cover;
-      position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -2;
-    }
-    #landmarks::before {
-      content: "";
-      background: url('https://images.unsplash.com/photo-1712764032909-dd6a7818b03b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
-      position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -2;
-    }
-    #flinders::before {
-      content: "";
-      background: url('https://images.unsplash.com/photo-1631494262276-eb28affc9704?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
-      position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -2;
-    }
-
-    #trams .content, #landmarks .content, #flinders .content {
-      padding: 6rem 2rem 4rem;
-      max-width: 900px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .detail-section {
-      display: none;
-      background: var(--primary);
-      padding: 6rem 2rem;
-    }
-    .detail-section .image-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-      margin-top: 2rem;
-    }
-    .detail-section .image-row img {
-      width: 48%;
-      border-radius: 12px;
-    }
-    @media (max-width: 768px) {
-      .detail-section .image-row img {
-        width: 100%;
-      }
-    }
-    .back-link {
-      color: var(--accent);
-      font-size: 1.1rem;
-      text-decoration: none;
-      margin-bottom: 2rem;
-      display: inline-block;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: var(--secondary);
-      color: #ccc;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Visit Melbourne</title>
+<style>
+:root {
+  --primary: #0a192f;
+  --secondary: #1f4068;
+  --accent: #62b6f0;
+  --text: #ffffff;
+}
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  background: var(--primary); color: var(--text);
+  scroll-behavior: smooth;
+}
+header {
+  background: var(--secondary);
+  padding: 1rem 0.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  height: 60px;
+}
+.header-left {
+  padding-right: 0; border-right: none;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.header-left img {
+  height: 50px;
+  max-height: none;
+  width: auto;
+  display: block;
+  margin-left: 0;
+}
+nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-left: auto;
+  padding-right: 1rem;
+}
+.dropdown {
+  position: relative;
+}
+.dropbtn {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+  margin-left: 1.5rem;
+  user-select: none;
+}
+.dropbtn:hover {
+  color: var(--accent);
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--secondary);
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  z-index: 1100;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-direction: column;
+}
+.dropdown-content a {
+  color: var(--text);
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  display: block;
+  font-weight: normal;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+.dropdown-content a:hover {
+  background: var(--accent);
+  color: var(--primary);
+}
+.dropdown.open .dropdown-content {
+  display: flex;
+}
+nav > a:not(:last-child) {
+  margin-left: 1.5rem;
+  position: relative;
+  padding-right: 0.75rem;
+}
+nav > a:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60%;
+  border-right: 1px solid rgba(255,255,255,0.3);
+}
+@media (max-width: 600px) {
+  nav {
+    padding-right: 0.5rem;
+  }
+  nav > a, .dropbtn {
+    font-size: 0.9rem;
+    margin-left: 1rem;
+    padding: 0 0.3rem;
+  }
+  .header-left img {
+    height: 48px;
+  }
+}
+.section {
+  padding: 6rem 2rem 4rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+.fade-in {
+  opacity: 1 !important;
+  transition: opacity 1.5s ease;
+}
+.fade-out {
+  opacity: 0 !important;
+}
+.hero {
+  background: url('https://images.unsplash.com/photo-1680759578665-36c6e5749ea2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0') no-repeat center center/cover;
+  position: relative;
+}
+.hero::before,
+#trams::after,
+#landmarks::after,
+#flinders::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(10, 25, 47, 0.7);
+  z-index: -1;
+}
+.hero-content, .content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#home h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+  line-height: 1.1;
+}
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 700px;
+}
+.btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 2rem;
+  background: var(--accent);
+  color: var(--primary);
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #4ea7e3;
+}
+#trams {
+  padding: 18rem 0.5rem 8rem;
+  color: white;
+  position: relative;
+  opacity: 1;
+  transition: opacity 1s ease;
+  width: 100vw;
+  max-width: 100%;
+  margin-left: calc(-50vw + 50%);
+  box-sizing: border-box;
+}
+#trams::before {
+  content: "";
+  background: url('https://images.unsplash.com/photo-1721717839294-374c6bd4f312?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0') no-repeat center bottom/cover;
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -2;
+  background-size: cover;
+  background-position: center bottom;
+}
+#landmarks::before {
+  content: "";
+  background: url('https://images.unsplash.com/photo-1712764032909-dd6a7818b03b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -2;
+}
+#flinders::before {
+  content: "";
+  background: url('https://images.unsplash.com/photo-1631494262276-eb28affc9704?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -2;
+}
+#trams .content, #landmarks .content, #flinders .content {
+  padding: 6rem 2rem 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.detail-section {
+  display: none;
+  background: var(--primary);
+  padding: 6rem 2rem;
+}
+.detail-section .image-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.detail-section .image-row img {
+  width: 48%;
+  border-radius: 12px;
+}
+@media (max-width: 768px) {
+  .detail-section .image-row img {
+    width: 100%;
+  }
+}
+.back-link {
+  color: var(--accent);
+  font-size: 1.1rem;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--secondary);
+  color: #ccc;
+}
+</style>
 </head>
 <body>
-
 <header>
-  <h1>Visit Melbourne</h1>
+  <div class="header-left">
+    <img src="https://melbournesptgallery.weebly.com/uploads/1/9/9/4/19942089/z1-mk2_orig.png" alt="Visit Melbourne Logo" />
+  </div>
   <nav>
-    <a href="#trams">Trams</a>
-    <a href="#landmarks">Landmarks</a>
-    <a href="#flinders">Flinders Station</a>
+    <div class="dropdown" id="dropdown-menu">
+      <button class="dropbtn" id="dropbtn">Info ▼</button>
+      <div class="dropdown-content" id="dropdown-content">
+        <a href="#trams" data-target="trams">Trams</a>
+        <a href="#landmarks" data-target="landmarks">Landmarks</a>
+        <a href="#flinders" data-target="flinders">Flinders Station</a>
+      </div>
+    </div>
   </nav>
 </header>
-
 <section class="section hero" id="home">
   <div class="hero-content">
     <h2>Welcome to Melbourne</h2>
@@ -168,7 +296,6 @@
     <a href="#trams" class="btn">Explore More</a>
   </div>
 </section>
-
 <section id="trams" class="section">
   <div class="content">
     <h2>Melbourne's Trams</h2>
@@ -176,7 +303,6 @@
     <a href="#trams-detail" class="btn" onclick="toggleDetail('trams-detail')">Learn More</a>
   </div>
 </section>
-
 <section id="landmarks" class="section">
   <div class="content">
     <h2>Famous Landmarks</h2>
@@ -184,7 +310,6 @@
     <a href="#landmarks-detail" class="btn" onclick="toggleDetail('landmarks-detail')">Learn More</a>
   </div>
 </section>
-
 <section id="flinders" class="section">
   <div class="content">
     <h2>Flinders Street Station</h2>
@@ -192,8 +317,6 @@
     <a href="#flinders-detail" class="btn" onclick="toggleDetail('flinders-detail')">Learn More</a>
   </div>
 </section>
-
-<!-- Trams Detail -->
 <section id="trams-detail" class="detail-section">
   <a href="#home" class="back-link" onclick="returnToMain()">&larr; Back to Main Page</a>
   <h2>Melbourne's Trams</h2>
@@ -203,20 +326,15 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/A2273_YarraTrams_New_Livery.JPG/1200px-A2273_YarraTrams_New_Livery.JPG" alt="A-Class Tram" />
   </div>
 </section>
-
-<!-- Landmarks Detail -->
 <section id="landmarks-detail" class="detail-section">
   <a href="#home" class="back-link" onclick="returnToMain()">&larr; Back to Main Page</a>
   <h2>Landmarks</h2>
-  <p>Federation Square, the Shrine of Remembrance, and the Melbourne Star, National Gallery of Art and Flinders street station. These are just some of the few amazing landmarks in Melbourne, amazing city views and vibrant culture makes Melbourne a Must Visit for tourists.
-</p>
+  <p>Federation Square, the Shrine of Remembrance, and the Melbourne Star, National Gallery of Art and Flinders street station. These are just some of the few amazing landmarks in Melbourne, amazing city views and vibrant culture makes Melbourne a Must Visit for tourists.</p>
   <div class="image-row">
     <img src="https://wallpapers.com/images/hd/melbourne-federation-square-event-dusk-7wezf5mggmqib7lt.jpg" alt="Federation Square" />
     <img src="https://media.gettyimages.com/id/1341872134/video/melbourne-australia-a-general-view-of-police-and-protestors-in-front-of-the-eternal-flame-at.jpg?s=640x640&k=20&c=UZiIfXr5UmmPgkZiWAVlxo_ld_yg-bradGtb26_v9mo=" alt="Shrine of Remembrance" />
   </div>
 </section>
-
-<!-- Flinders Detail -->
 <section id="flinders-detail" class="detail-section">
   <a href="#home" class="back-link" onclick="returnToMain()">&larr; Back to Main Page</a>
   <h2>Flinders Street Station</h2>
@@ -226,31 +344,46 @@
     <img src="https://www.lovellchen.com.au/wp-content/uploads/2018/11/PROJECT-headline_flindersStreetStation_1000x410.jpg" alt="Another View" />
   </div>
 </section>
-
 <footer>
   &copy; 2025 Made by Harrington Whaley for Mr Chester. Hand Coded by Harrington with about 40 youtube videos-
 </footer>
-
 <script>
-  function toggleDetail(id) {
-    const allDetails = document.querySelectorAll('.detail-section');
-    allDetails.forEach(section => section.style.display = 'none');
-    const mainSections = document.querySelectorAll('.section');
-    mainSections.forEach(sec => sec.style.display = 'none');
-    document.getElementById(id).style.display = 'block';
-    window.scrollTo(0, 0);
-  }
-
-  function returnToMain() {
-    const allDetails = document.querySelectorAll('.detail-section');
-    allDetails.forEach(section => section.style.display = 'none');
-    const mainSections = document.querySelectorAll('.section');
-    mainSections.forEach(sec => sec.style.display = 'flex');
-    window.scrollTo(0, 0);
-    return false;
-  }
+const dropbtn=document.getElementById('dropbtn'), dropdown=document.getElementById('dropdown-menu');
+dropbtn.addEventListener('click',()=>dropdown.classList.toggle('open'));
+window.addEventListener('click', e=>{
+  if(!dropdown.contains(e.target)) dropdown.classList.remove('open');
+});
+document.querySelectorAll('.dropdown-content a').forEach(link=>{
+  link.addEventListener('click', e=>{
+    e.preventDefault();
+    dropdown.classList.remove('open');
+    const targetId=link.getAttribute('data-target');
+    const targetSection=document.getElementById(targetId);
+    if(!targetSection) return;
+    window.scrollTo({top: targetSection.offsetTop-60, behavior:'auto'});
+    document.querySelectorAll('.section').forEach(section=>{
+      if(section.id !== targetId) section.style.opacity=0;
+    });
+    targetSection.style.opacity=0;
+    targetSection.style.transition='opacity 1.5s ease';
+    setTimeout(()=>{targetSection.style.opacity=1;},50);
+  });
+});
+function toggleDetail(id){
+  document.querySelectorAll('.detail-section').forEach(s=>s.style.display='none');
+  document.querySelectorAll('.section').forEach(s=>s.style.display='none');
+  document.getElementById(id).style.display='block';
+  window.scrollTo(0,0);
+}
+function returnToMain(){
+  document.querySelectorAll('.detail-section').forEach(s=>s.style.display='none');
+  document.querySelectorAll('.section').forEach(s=>{
+    s.style.display='flex';
+    s.style.opacity=1;
+  });
+  window.scrollTo(0,0);
+  return false;
+}
 </script>
-
 </body>
 </html>
-
